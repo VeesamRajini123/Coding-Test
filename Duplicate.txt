@@ -1,0 +1,83 @@
+package pattern;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Duplicate {
+
+		public static void main(String[] args) 
+		
+		{
+			   System.out.println("Veesam Rajini");
+			   Scanner sc = new Scanner(System.in);
+		        // Get the size of the array from the user
+		        System.out.print("Enter the number of elements in the array: ");
+		        int n = sc.nextInt();
+
+		        // Create an array to store the elements
+		        int[] array = new int[n];
+		        
+		        // Get the elements of the array from the user
+		        System.out.println("Enter the elements of the array:");
+
+		        for (int i = 0; i < n; i++) 
+		        
+		        {
+		            array[i] = sc.nextInt();
+		        }
+
+		        // Find and print duplicate elements
+		        System.out.println("Duplicate elements in the array are:");
+		        findAndPrintDuplicates(array);
+		    }
+
+		    // Function to find and print duplicate elements in an array
+		    static void findAndPrintDuplicates(int[] array) 
+		    
+		    {
+		        // Set to store unique elements
+		        Set<Integer> uniqueElements = new HashSet<>();
+		        
+		        // Set to store duplicate elements
+		        Set<Integer> duplicateElements = new HashSet<>();
+
+		        // Iterate through the array
+		        for (int num : array) 
+		        
+		        {
+		            // If the element is already in uniqueElements set, it's a duplicate
+		            if (!uniqueElements.add(num)) 
+		            
+		            {
+		                duplicateElements.add(num);
+		            }
+		        }
+
+		        // Print the duplicate elements
+		        for (int duplicate : duplicateElements) 
+		        {
+		        	System.out.println(duplicate);
+		        }
+		    }
+		}
+
+
+
+
+Output:
+
+Veesam Rajini
+Enter the number of elements in the array: 7
+Enter the elements of the array:
+2
+3
+1
+5
+3
+1
+2
+Duplicate elements in the array are:
+1
+2
+3
